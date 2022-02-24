@@ -21,3 +21,5 @@ Sample analysis code to read data and make plots
 accum_level: accumulated number of cuts that an event passes
 
 nuesimpletopo: 1 & 2 = nueCC, 3 = gamma bkg, 4 = muon bkg, others = others
+
+particle: truth PDG ID of the event main track 

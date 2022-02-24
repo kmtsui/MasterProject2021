@@ -16,6 +16,7 @@ void analysis()
     // Use TTree::Print() to list all available branches and data types
     int nue_signal;
     int nuesimpletopo;
+    int particle;
     int accum_level[100]; // for array variables, reserve a large enough size
     float selelec_mom[100];
     int nEntries;
@@ -30,6 +31,7 @@ void analysis()
     // Uncomment if using the TChain
     in_chain->SetBranchAddress("nue_signal",&nue_signal);
     in_chain->SetBranchAddress("nuesimpletopo",&nuesimpletopo);
+    in_chain->SetBranchAddress("particle",&particle);
     in_chain->SetBranchAddress("accum_level",accum_level);
     in_chain->SetBranchAddress("selelec_mom",selelec_mom);
     nEntries = in_chain->GetEntries();
@@ -53,9 +55,12 @@ void analysis()
         }
     }
 
+    TFile* fOut = new TFile("output.root","RECREATE");
     // Create a canvas for display
     TCanvas* c1 = new TCanvas();
     hist_mom->Draw();
     // Save as pdf if necessary
     // c1->SaveAs("hist_mom.pdf");
+    hist_mom->Write();
+    fOut->Close();
 }
