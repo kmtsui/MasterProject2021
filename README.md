@@ -23,3 +23,10 @@ accum_level: accumulated number of cuts that an event passes
 nuesimpletopo: 1 & 2 = nueCC, 3 = gamma bkg, 4 = muon bkg, others = others
 
 particle: truth PDG ID of the event main track 
+
+## SFG_nueCCAnalysis
+Sample MC data for neutrino events in Super-FGD. Only neutrino mode events with true vertex inside SFG are simulated.
+ND280 upgrade overview can be found in https://indico.cern.ch/event/868940/contributions/3817023/attachments/2081306/3495881/ND280_upgrade_ICHEP2020_-_final.pdf
+Two classes of variables are stored:
+selelec_XXX are the variables of the highest momentum track starting from SFG in an event
+SFGTracks_XXX are the variables of the all tracks with a SFG segment
